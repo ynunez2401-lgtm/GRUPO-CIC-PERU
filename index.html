@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Grupo CIC PERÚ - Corporación Industrial y Comercial del Perú SAC"
+    >
+
+    <title>Grupo CIC PERÚ</title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+
+    <script
+        src="app.js"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="home">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="main-header">
+
+        <div class="container">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="index.html"
+                class="logo-link"
+                aria-label="Ir al inicio"
+            >
+
+                <div class="logo">
+
+                    <img
+                        src="imagenes/Logo.jpeg"
+                        alt="Logo Grupo CIC PERÚ"
+                    >
+
+                    <span>
+                        Grupo CIC PERÚ
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 BOTÓN HAMBURGUESA
+                 SOLO APARECE EN CELULARES / TABLETS
+            ================================================== -->
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menú"
+                aria-controls="mainNav"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- =================================================
+                 NAVEGACIÓN
+            ================================================== -->
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+                aria-label="Navegación principal"
+            >
+
+                <ul>
+
+                    <li>
+                        <a
+                            href="index.html"
+                            class="active"
+                        >
+                            Inicio
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="corporacion/corporacion.html">
+                            Corporación
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="servicios/servicios.html">
+                            Servicios
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="bienes/bienes.html">
+                            Bienes
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="proyectos/proyectos.html">
+                            Proyectos
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="licitaciones/licitaciones.html">
+                            Licitaciones
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="contacto/contacto.html">
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="hero-full">
+
+            <div class="overlay">
+
+
+                <h1>
+                    Grupo CIC PERÚ
+                </h1>
+
+
+                <p class="hero-subtitle">
+                    Corporación Industrial y Comercial del Perú SAC
+                </p>
+
+
+                <p class="hero-description">
+
+                    Grupo CIC PERÚ es una organización dedicada a la
+                    prestación de servicios integrales, comercialización
+                    de bienes, desarrollo de proyectos y soluciones
+                    empresariales para el sector público y privado.
+
+                </p>
+
+
+                <a
+                    href="#"
+                    class="btn-contact"
+                    id="openModal"
+                >
+                    Contáctanos
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MODAL DE CONTACTO
+    ====================================================== -->
+
+    <div
+        id="contactModal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactModalTitle"
+    >
+
+        <div class="modal-content">
+
+
+            <button
+                type="button"
+                class="close"
+                id="closeModal"
+                aria-label="Cerrar formulario"
+            >
+                &times;
+            </button>
+
+
+            <h2 id="contactModalTitle">
+                Contáctanos
+            </h2>
+
+
+            <form
+                class="contact-form"
+                id="contactForm"
+            >
+
+
+                <label for="nombre">
+                    Nombre completo:
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Tu nombre"
+                    autocomplete="name"
+                    required
+                >
+
+
+                <label for="email">
+                    Correo electrónico:
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Tu correo"
+                    autocomplete="email"
+                    required
+                >
+
+
+                <label for="telefono">
+                    Teléfono:
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="Tu teléfono"
+                    autocomplete="tel"
+                >
+
+
+                <label for="mensaje">
+                    Mensaje:
+                </label>
+
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    placeholder="Escribe tu mensaje"
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="btn-contact"
+                >
+                    Enviar
+                </button>
+
+
+                <p class="form-whatsapp-info">
+                    Al continuar, se abrirá WhatsApp con los datos ingresados.
+                </p>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Grupo CIC PERÚ
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         WHATSAPP
+    ====================================================== -->
+
+    <a
+        href="https://wa.me/51945340444"
+        class="whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+    >
+
+        <img
+            src="imagenes/whatsapp.png"
+            alt="WhatsApp"
+        >
+
+    </a>
+
+
+</body>
+
+</html>

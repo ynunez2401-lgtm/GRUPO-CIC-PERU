@@ -1,0 +1,1000 @@
+/* =========================================================
+   GRUPO CIC PERÚ
+   SERVICIOS.CSS
+   Página: Servicios
+========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES
+========================================================= */
+
+.servicios-page {
+    --serv-azul: #00549a;
+    --serv-azul-oscuro: #003f78;
+    --serv-rojo: #ed1c24;
+    --serv-rojo-oscuro: #c9141c;
+    --serv-blanco: #ffffff;
+    --serv-texto: #243b53;
+    --serv-fondo: #f4f7fa;
+    --serv-borde: #dce5ed;
+}
+
+
+/* =========================================================
+   02. PÁGINA
+========================================================= */
+
+.servicios-page {
+    background: var(--serv-fondo);
+}
+
+.servicios-page main {
+    width: 100%;
+    min-height: calc(
+        100vh -
+        var(--header-height) -
+        var(--footer-height)
+    );
+
+    padding:
+        55px 20px
+        80px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f7f9fb 100%
+        );
+}
+
+
+/* =========================================================
+   03. GRID PRINCIPAL
+========================================================= */
+
+.servicios-page .grid {
+    width: 90%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 26px;
+}
+
+
+/* =========================================================
+   04. TARJETAS
+========================================================= */
+
+.servicios-page .card {
+    position: relative;
+
+    width: 100%;
+    min-height: 350px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 14px;
+
+    background-color:
+        var(--serv-azul-oscuro);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    isolation: isolate;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 28px
+        rgba(22, 55, 85, 0.13);
+
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   05. EFECTO ZOOM DE IMAGEN
+
+   El fondo se coloca en ::before para poder ampliarlo
+   sin deformar el contenido.
+========================================================= */
+
+.servicios-page .card::before {
+    content: "";
+
+    position: absolute;
+    inset: -2px;
+
+    z-index: -3;
+
+    background-image: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transform: scale(1.01);
+
+    transition:
+        transform 0.7s
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   06. OSCURECIMIENTO DE LAS TARJETAS
+========================================================= */
+
+.servicios-page .card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 25, 50, 0.10) 0%,
+            rgba(0, 30, 60, 0.18) 28%,
+            rgba(0, 30, 58, 0.55) 63%,
+            rgba(0, 25, 50, 0.96) 100%
+        );
+
+    transition:
+        background 0.4s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   07. IMÁGENES
+========================================================= */
+
+/* CONSULTORÍA EMPRESARIAL */
+
+.servicios-page .consultoria {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85"
+        );
+}
+
+
+/* SEGURIDAD INTEGRAL */
+
+.servicios-page .seguridad {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=85"
+        );
+}
+
+
+/* SERVICIOS LOGÍSTICOS */
+
+.servicios-page .logistica {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85"
+        );
+}
+
+
+/* CONSULTORÍA Y GESTIÓN DE PROYECTOS */
+
+.servicios-page .proyectos {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85"
+        );
+}
+
+
+/* SOLUCIONES TECNOLÓGICAS */
+
+.servicios-page .tecnologia {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"
+        );
+}
+
+
+/* SERVICIOS CORPORATIVOS */
+
+.servicios-page .corporativos {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
+        );
+}
+
+
+/* =========================================================
+   08. OVERLAY DEL CONTENIDO
+========================================================= */
+
+.servicios-page .card-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 30px 27px;
+
+    color: var(--serv-blanco);
+
+    /*
+       Efecto inicial muy ligero.
+    */
+
+    transform: translateY(4px);
+
+    transition:
+        transform 0.4s
+        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   09. LÍNEA ROJA DECORATIVA
+========================================================= */
+
+.servicios-page .card-overlay::before {
+    content: "";
+
+    width: 48px;
+    height: 4px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    background:
+        var(--serv-rojo);
+
+    transform-origin: left center;
+
+    transition:
+        width 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* =========================================================
+   10. TÍTULO
+========================================================= */
+
+.servicios-page .card-title {
+    position: relative;
+
+    margin-bottom: 11px;
+
+    color:
+        var(--serv-blanco);
+
+    font-size: 22px;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    text-align: left;
+
+    text-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+/* =========================================================
+   11. DESCRIPCIÓN
+========================================================= */
+
+.servicios-page .card-description {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.92);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    text-align: justify;
+    text-justify: inter-word;
+
+    hyphens: auto;
+    -webkit-hyphens: auto;
+
+    opacity: 0.90;
+
+    transform:
+        translateY(5px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* =========================================================
+   12. HOVER - TARJETA
+========================================================= */
+
+@media (hover: hover) {
+
+    .servicios-page .card:hover {
+        transform:
+            translateY(-9px);
+
+        border-color:
+            rgba(0, 84, 154, 0.25);
+
+        box-shadow:
+            0 22px 48px
+            rgba(18, 55, 88, 0.22);
+    }
+
+
+    /* ZOOM IMAGEN */
+
+    .servicios-page .card:hover::before {
+        transform:
+            scale(1.10);
+    }
+
+
+    /* OVERLAY MÁS INTENSO */
+
+    .servicios-page .card:hover::after {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 25, 50, 0.06) 0%,
+                rgba(0, 30, 60, 0.20) 28%,
+                rgba(0, 30, 58, 0.60) 60%,
+                rgba(0, 25, 50, 0.98) 100%
+            );
+    }
+
+
+    /* CONTENIDO */
+
+    .servicios-page .card:hover .card-overlay {
+        transform:
+            translateY(0);
+    }
+
+
+    /* LÍNEA ROJA */
+
+    .servicios-page .card:hover .card-overlay::before {
+        width: 100%;
+    }
+
+
+    /* DESCRIPCIÓN */
+
+    .servicios-page .card:hover .card-description {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   13. ESTADO ACTIVO
+   Utilizado por servicios.js en móvil/tablet
+========================================================= */
+
+.servicios-page .card.service-active {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 42px
+        rgba(18, 55, 88, 0.20);
+}
+
+
+.servicios-page .card.service-active::before {
+    transform:
+        scale(1.09);
+}
+
+
+.servicios-page .card.service-active::after {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 25, 50, 0.06) 0%,
+            rgba(0, 30, 60, 0.20) 28%,
+            rgba(0, 30, 58, 0.60) 60%,
+            rgba(0, 25, 50, 0.98) 100%
+        );
+}
+
+
+.servicios-page
+.card.service-active
+.card-overlay {
+    transform:
+        translateY(0);
+}
+
+
+.servicios-page
+.card.service-active
+.card-overlay::before {
+    width: 100%;
+}
+
+
+.servicios-page
+.card.service-active
+.card-description {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   14. FOCO POR TECLADO
+========================================================= */
+
+.servicios-page .card:focus-visible {
+    outline:
+        3px solid
+        rgba(0, 84, 154, 0.40);
+
+    outline-offset: 4px;
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 42px
+        rgba(18, 55, 88, 0.20);
+}
+
+
+.servicios-page
+.card:focus-visible
+.card-overlay::before {
+    width: 100%;
+}
+
+
+/* =========================================================
+   15. EFECTO DE BRILLO
+========================================================= */
+
+.servicios-page .card-overlay::after {
+    content: "";
+
+    position: absolute;
+
+    top: -120%;
+    left: -80%;
+
+    width: 45%;
+    height: 300%;
+
+    z-index: -1;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.10),
+            transparent
+        );
+
+    transform:
+        rotate(20deg);
+
+    pointer-events: none;
+}
+
+
+@media (hover: hover) {
+
+    .servicios-page
+    .card:hover
+    .card-overlay::after {
+
+        animation:
+            serviceShine
+            1s ease;
+    }
+
+}
+
+
+@keyframes serviceShine {
+
+    0% {
+        left: -80%;
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 140%;
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   16. ANIMACIÓN DE ENTRADA
+   Compatible con servicios.js
+========================================================= */
+
+.servicios-page .service-reveal {
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    transition-delay:
+        var(--service-delay, 0ms);
+}
+
+
+.servicios-page
+.service-reveal.service-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   17. EFECTO DE ENTRADA SIN JS
+   Respaldo visual para las tarjetas originales
+========================================================= */
+
+@keyframes serviceCardEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/*
+   Solo se aplica si JS todavía no ha agregado
+   la clase service-reveal.
+*/
+
+.servicios-page
+.grid
+.card:not(.service-reveal) {
+
+    animation:
+        serviceCardEntrance
+        0.65s ease both;
+}
+
+
+.servicios-page
+.grid
+.card:nth-child(1):not(.service-reveal) {
+    animation-delay: 0.05s;
+}
+
+
+.servicios-page
+.grid
+.card:nth-child(2):not(.service-reveal) {
+    animation-delay: 0.10s;
+}
+
+
+.servicios-page
+.grid
+.card:nth-child(3):not(.service-reveal) {
+    animation-delay: 0.15s;
+}
+
+
+.servicios-page
+.grid
+.card:nth-child(4):not(.service-reveal) {
+    animation-delay: 0.20s;
+}
+
+
+.servicios-page
+.grid
+.card:nth-child(5):not(.service-reveal) {
+    animation-delay: 0.25s;
+}
+
+
+.servicios-page
+.grid
+.card:nth-child(6):not(.service-reveal) {
+    animation-delay: 0.30s;
+}
+
+
+/* =========================================================
+   18. LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .servicios-page main {
+        padding:
+            45px 20px
+            75px;
+    }
+
+
+    .servicios-page .grid {
+        width: 94%;
+
+        gap: 21px;
+    }
+
+
+    .servicios-page .card {
+        min-height: 325px;
+    }
+
+
+    .servicios-page .card-overlay {
+        padding:
+            27px 23px;
+    }
+
+
+    .servicios-page .card-title {
+        font-size: 20px;
+    }
+
+
+    .servicios-page .card-description {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   19. TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .servicios-page main {
+        padding:
+            40px 20px
+            calc(
+                var(--footer-height) +
+                45px
+            );
+    }
+
+
+    .servicios-page .grid {
+        width: 100%;
+        max-width: 700px;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 20px;
+    }
+
+
+    .servicios-page .card {
+        min-height: 330px;
+    }
+
+
+    .servicios-page .card-overlay {
+        padding:
+            25px 22px;
+    }
+
+
+    .servicios-page .card-title {
+        font-size: 20px;
+    }
+
+
+    .servicios-page .card-description {
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        text-align: justify;
+    }
+
+}
+
+
+/* =========================================================
+   20. CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .servicios-page main {
+        padding:
+            28px 18px
+            calc(
+                var(--footer-height) +
+                45px
+            );
+    }
+
+
+    /* UNA TARJETA POR FILA */
+
+    .servicios-page .grid {
+        width: 100%;
+
+        grid-template-columns:
+            1fr;
+
+        gap: 18px;
+    }
+
+
+    .servicios-page .card {
+        min-height: 300px;
+
+        border-radius: 11px;
+    }
+
+
+    .servicios-page .card-overlay {
+        padding:
+            24px 21px;
+    }
+
+
+    .servicios-page
+    .card-overlay::before {
+        width: 42px;
+        height: 3px;
+
+        margin-bottom: 13px;
+    }
+
+
+    .servicios-page .card-title {
+        margin-bottom: 9px;
+
+        font-size: 20px;
+
+        line-height: 1.25;
+    }
+
+
+    .servicios-page .card-description {
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+
+    /*
+       En celular evitamos movimientos exagerados.
+    */
+
+    .servicios-page
+    .card.service-active {
+        transform:
+            translateY(-3px);
+    }
+
+
+    .servicios-page
+    .card.service-active::before {
+        transform:
+            scale(1.06);
+    }
+
+}
+
+
+/* =========================================================
+   21. CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .servicios-page main {
+        padding:
+            22px 15px
+            calc(
+                var(--footer-height) +
+                40px
+            );
+    }
+
+
+    .servicios-page .grid {
+        gap: 15px;
+    }
+
+
+    .servicios-page .card {
+        min-height: 270px;
+    }
+
+
+    .servicios-page .card-overlay {
+        padding:
+            21px 18px;
+    }
+
+
+    .servicios-page .card-title {
+        font-size: 19px;
+    }
+
+
+    .servicios-page .card-description {
+        font-size: 13.5px;
+
+        line-height: 1.58;
+    }
+
+}
+
+
+/* =========================================================
+   22. PANTALLAS GRANDES
+========================================================= */
+
+@media (min-width: 1600px) {
+
+    .servicios-page main {
+        padding:
+            70px 20px
+            100px;
+    }
+
+
+    .servicios-page .grid {
+        max-width: 1280px;
+
+        gap: 30px;
+    }
+
+
+    .servicios-page .card {
+        min-height: 390px;
+    }
+
+
+    .servicios-page .card-overlay {
+        padding:
+            34px 31px;
+    }
+
+
+    .servicios-page .card-title {
+        font-size: 24px;
+    }
+
+
+    .servicios-page .card-description {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+}
+
+
+/* =========================================================
+   23. MOVIMIENTO REDUCIDO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .servicios-page .card,
+    .servicios-page .card::before,
+    .servicios-page .card::after,
+    .servicios-page .card-overlay,
+    .servicios-page .card-overlay::before,
+    .servicios-page .card-description,
+    .servicios-page .service-reveal {
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+
+
+    .servicios-page .service-reveal {
+        opacity: 1;
+
+        transform: none;
+    }
+
+
+    .servicios-page
+    .grid
+    .card:not(.service-reveal) {
+
+        opacity: 1;
+
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   FIN SERVICIOS.CSS
+========================================================= */

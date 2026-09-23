@@ -1,0 +1,741 @@
+/* =========================================================
+   GRUPO CIC PERÚ
+   BIENES.CSS
+   Página: Bienes
+========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES
+========================================================= */
+
+.bienes-page {
+    --bien-azul: #00549a;
+    --bien-azul-oscuro: #003f78;
+    --bien-rojo: #ed1c24;
+    --bien-blanco: #ffffff;
+    --bien-fondo: #f4f7fa;
+}
+
+
+/* =========================================================
+   02. PÁGINA
+========================================================= */
+
+.bienes-page {
+    background: var(--bien-fondo);
+}
+
+
+.bienes-page main {
+    width: 100%;
+
+    min-height: calc(
+        100vh -
+        var(--header-height) -
+        var(--footer-height)
+    );
+
+    padding:
+        55px 20px
+        80px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f7f9fb 100%
+        );
+}
+
+
+/* =========================================================
+   03. GRID
+========================================================= */
+
+.bienes-page .grid {
+    width: 90%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   04. TARJETAS
+========================================================= */
+
+.bienes-page .card {
+    position: relative;
+
+    width: 100%;
+    min-height: 350px;
+
+    padding: 32px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 14px;
+
+    background-color:
+        var(--bien-azul-oscuro);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    isolation: isolate;
+
+    cursor: pointer;
+
+    color:
+        var(--bien-blanco);
+
+    font-size: 25px;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    text-align: left;
+
+    text-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, 0.35);
+
+    box-shadow:
+        0 10px 30px
+        rgba(20, 55, 85, 0.14);
+
+    transition:
+        transform 0.4s
+        cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   05. IMAGEN COMO CAPA
+========================================================= */
+
+.bienes-page .card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    z-index: -3;
+
+    background-image: inherit;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    transform:
+        scale(1.01);
+
+    transition:
+        transform 0.75s
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   06. OVERLAY
+========================================================= */
+
+.bienes-page .card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 30, 60, 0.06) 0%,
+            rgba(0, 30, 60, 0.16) 35%,
+            rgba(0, 28, 55, 0.58) 68%,
+            rgba(0, 24, 48, 0.96) 100%
+        );
+
+    transition:
+        background 0.4s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   07. IMÁGENES
+========================================================= */
+
+
+/* EQUIPOS TECNOLÓGICOS */
+
+.bienes-page .tecnologia {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85"
+        );
+}
+
+
+/* MATERIALES INDUSTRIALES */
+
+.bienes-page .industriales {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=85"
+        );
+}
+
+
+/* SUMINISTROS DE SEGURIDAD */
+
+.bienes-page .seguridad {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=85"
+        );
+}
+
+
+/* EQUIPAMIENTO LOGÍSTICO */
+
+.bienes-page .logistica {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85"
+        );
+}
+
+
+/* =========================================================
+   08. LÍNEA ROJA
+========================================================= */
+
+/*
+   Debido a que tu HTML original contiene únicamente
+   el texto directamente dentro de .card, utilizamos
+   box-shadow interno como detalle institucional.
+*/
+
+.bienes-page .card {
+    box-shadow:
+        inset 0 -4px 0
+        var(--bien-rojo),
+
+        0 10px 30px
+        rgba(20, 55, 85, 0.14);
+}
+
+
+/* =========================================================
+   09. HOVER
+========================================================= */
+
+@media (hover: hover) {
+
+    .bienes-page .card:hover {
+        transform:
+            translateY(-9px);
+
+        border-color:
+            rgba(0, 84, 154, 0.25);
+
+        box-shadow:
+            inset 0 -6px 0
+            var(--bien-rojo),
+
+            0 22px 48px
+            rgba(18, 55, 88, 0.23);
+    }
+
+
+    /* ZOOM */
+
+    .bienes-page .card:hover::before {
+        transform:
+            scale(1.10);
+    }
+
+
+    /* OVERLAY */
+
+    .bienes-page .card:hover::after {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 30, 60, 0.03) 0%,
+                rgba(0, 30, 60, 0.13) 30%,
+                rgba(0, 28, 55, 0.58) 62%,
+                rgba(0, 24, 48, 0.98) 100%
+            );
+    }
+
+}
+
+
+/* =========================================================
+   10. ESTADO ACTIVO
+   Utilizado por bienes.js
+========================================================= */
+
+.bienes-page .card.bien-active {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0, 84, 154, 0.25);
+
+    box-shadow:
+        inset 0 -6px 0
+        var(--bien-rojo),
+
+        0 22px 48px
+        rgba(18, 55, 88, 0.22);
+}
+
+
+.bienes-page .card.bien-active::before {
+    transform:
+        scale(1.10);
+}
+
+
+.bienes-page .card.bien-active::after {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 30, 60, 0.03) 0%,
+            rgba(0, 30, 60, 0.13) 30%,
+            rgba(0, 28, 55, 0.58) 62%,
+            rgba(0, 24, 48, 0.98) 100%
+        );
+}
+
+
+/* =========================================================
+   11. FOCO TECLADO
+========================================================= */
+
+.bienes-page .card:focus-visible {
+    outline:
+        3px solid
+        rgba(0, 84, 154, 0.40);
+
+    outline-offset: 4px;
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        inset 0 -6px 0
+        var(--bien-rojo),
+
+        0 22px 48px
+        rgba(18, 55, 88, 0.22);
+}
+
+
+.bienes-page .card:focus-visible::before {
+    transform:
+        scale(1.10);
+}
+
+
+/* =========================================================
+   12. EFECTO DE BRILLO
+========================================================= */
+
+/*
+   Como ::before y ::after ya se utilizan para
+   imagen y overlay, generamos un brillo mediante
+   background-blend-mode.
+*/
+
+@media (hover: hover) {
+
+    .bienes-page .card:hover {
+        background-blend-mode:
+            screen;
+    }
+
+}
+
+
+/* =========================================================
+   13. ANIMACIÓN DE ENTRADA
+   Compatible con bienes.js
+========================================================= */
+
+.bienes-page .bien-reveal {
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    transition-delay:
+        var(--bien-delay, 0ms);
+}
+
+
+.bienes-page
+.bien-reveal.bien-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   14. RESPALDO DE ANIMACIÓN SIN JS
+========================================================= */
+
+@keyframes bienEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+.bienes-page
+.grid
+.card:not(.bien-reveal) {
+    animation:
+        bienEntrance
+        0.65s ease both;
+}
+
+
+.bienes-page
+.grid
+.card:nth-child(1):not(.bien-reveal) {
+    animation-delay: 0.05s;
+}
+
+
+.bienes-page
+.grid
+.card:nth-child(2):not(.bien-reveal) {
+    animation-delay: 0.12s;
+}
+
+
+.bienes-page
+.grid
+.card:nth-child(3):not(.bien-reveal) {
+    animation-delay: 0.19s;
+}
+
+
+.bienes-page
+.grid
+.card:nth-child(4):not(.bien-reveal) {
+    animation-delay: 0.26s;
+}
+
+
+/* =========================================================
+   15. EFECTO AL PRESIONAR
+========================================================= */
+
+.bienes-page .card:active {
+    transform:
+        translateY(-3px)
+        scale(0.99);
+}
+
+
+/* =========================================================
+   16. LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .bienes-page main {
+        padding:
+            45px 20px
+            75px;
+    }
+
+
+    .bienes-page .grid {
+        width: 94%;
+
+        gap: 22px;
+    }
+
+
+    .bienes-page .card {
+        min-height: 325px;
+
+        padding: 28px;
+
+        font-size: 23px;
+    }
+
+}
+
+
+/* =========================================================
+   17. TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .bienes-page main {
+        padding:
+            40px 20px
+            calc(
+                var(--footer-height) +
+                50px
+            );
+    }
+
+
+    .bienes-page .grid {
+        width: 100%;
+        max-width: 700px;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 20px;
+    }
+
+
+    .bienes-page .card {
+        min-height: 310px;
+
+        padding: 25px;
+
+        font-size: 21px;
+    }
+
+
+    .bienes-page
+    .card.bien-active {
+        transform:
+            translateY(-5px);
+    }
+
+}
+
+
+/* =========================================================
+   18. CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .bienes-page main {
+        padding:
+            28px 18px
+            calc(
+                var(--footer-height) +
+                45px
+            );
+
+        align-items: flex-start;
+    }
+
+
+    /* UNA TARJETA POR FILA */
+
+    .bienes-page .grid {
+        width: 100%;
+
+        grid-template-columns:
+            1fr;
+
+        gap: 18px;
+    }
+
+
+    .bienes-page .card {
+        min-height: 285px;
+
+        padding: 23px;
+
+        border-radius: 11px;
+
+        font-size: 21px;
+    }
+
+
+    /*
+       Reducimos ligeramente el movimiento
+       para pantallas táctiles.
+    */
+
+    .bienes-page
+    .card.bien-active {
+        transform:
+            translateY(-3px);
+    }
+
+
+    .bienes-page
+    .card.bien-active::before {
+        transform:
+            scale(1.06);
+    }
+
+}
+
+
+/* =========================================================
+   19. CELULAR PEQUEÑO
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .bienes-page main {
+        padding:
+            22px 15px
+            calc(
+                var(--footer-height) +
+                40px
+            );
+    }
+
+
+    .bienes-page .grid {
+        gap: 15px;
+    }
+
+
+    .bienes-page .card {
+        min-height: 250px;
+
+        padding: 20px;
+
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   20. PANTALLAS GRANDES
+========================================================= */
+
+@media (min-width: 1600px) {
+
+    .bienes-page main {
+        padding:
+            70px 20px
+            100px;
+    }
+
+
+    .bienes-page .grid {
+        max-width: 1280px;
+
+        gap: 32px;
+    }
+
+
+    .bienes-page .card {
+        min-height: 410px;
+
+        padding: 38px;
+
+        font-size: 28px;
+    }
+
+}
+
+
+/* =========================================================
+   21. MOVIMIENTO REDUCIDO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .bienes-page .card,
+    .bienes-page .card::before,
+    .bienes-page .card::after,
+    .bienes-page .bien-reveal {
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+
+
+    .bienes-page .bien-reveal {
+        opacity: 1;
+
+        transform: none;
+    }
+
+
+    .bienes-page
+    .grid
+    .card:not(.bien-reveal) {
+        opacity: 1;
+
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   FIN BIENES.CSS
+========================================================= */

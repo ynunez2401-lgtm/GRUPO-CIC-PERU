@@ -1,0 +1,712 @@
+/* =========================================================
+   GRUPO CIC PERÚ
+   PROYECTOS.CSS
+   Página: Proyectos
+========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES
+========================================================= */
+
+.proyectos-page {
+    --proy-azul: #00549a;
+    --proy-azul-oscuro: #003f78;
+    --proy-rojo: #ed1c24;
+    --proy-blanco: #ffffff;
+    --proy-fondo: #f4f7fa;
+}
+
+
+/* =========================================================
+   02. PÁGINA
+========================================================= */
+
+.proyectos-page {
+    background: var(--proy-fondo);
+}
+
+
+.proyectos-page main {
+    width: 100%;
+
+    min-height: calc(
+        100vh -
+        var(--header-height) -
+        var(--footer-height)
+    );
+
+    padding: 55px 20px 80px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f7f9fb 100%
+        );
+}
+
+
+/* =========================================================
+   03. GRID
+========================================================= */
+
+.proyectos-page .grid {
+    width: 90%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 26px;
+}
+
+
+/* =========================================================
+   04. TARJETAS
+========================================================= */
+
+.proyectos-page .card {
+    position: relative;
+
+    width: 100%;
+    min-height: 390px;
+
+    padding: 30px 26px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: flex-end;
+
+    isolation: isolate;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 14px;
+
+    background-color:
+        var(--proy-azul-oscuro);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: var(--proy-blanco);
+
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    text-align: left;
+
+    text-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, 0.35);
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 -4px 0
+        var(--proy-rojo),
+
+        0 10px 30px
+        rgba(20, 55, 85, 0.14);
+
+    transition:
+        transform 0.4s
+        cubic-bezier(0.22, 1, 0.36, 1),
+
+        box-shadow 0.4s ease,
+
+        border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   05. CAPA DE IMAGEN
+========================================================= */
+
+.proyectos-page .card::before {
+    content: "";
+
+    position: absolute;
+    inset: -2px;
+
+    z-index: -3;
+
+    background-image: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transform: scale(1.01);
+
+    transition:
+        transform 0.75s
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   06. OVERLAY
+========================================================= */
+
+.proyectos-page .card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 25, 50, 0.05) 0%,
+            rgba(0, 28, 55, 0.15) 30%,
+            rgba(0, 27, 53, 0.52) 63%,
+            rgba(0, 22, 45, 0.97) 100%
+        );
+
+    transition:
+        background 0.4s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   07. IMÁGENES DE LOS PROYECTOS
+========================================================= */
+
+
+/* PROYECTO ENERGÉTICO RURAL */
+
+.proyectos-page .energetico {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1400&q=85"
+        );
+}
+
+
+/* SISTEMA DE SEGURIDAD URBANA */
+
+.proyectos-page .seguridad {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=85"
+        );
+}
+
+
+/* IMPLEMENTACIÓN LOGÍSTICA */
+
+.proyectos-page .logistica {
+    background-image:
+        url(
+            "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85"
+        );
+}
+
+
+/* =========================================================
+   08. HOVER EN ESCRITORIO
+========================================================= */
+
+@media (hover: hover) {
+
+    .proyectos-page .card:hover {
+        transform:
+            translateY(-10px);
+
+        border-color:
+            rgba(0, 84, 154, 0.28);
+
+        box-shadow:
+            inset 0 -7px 0
+            var(--proy-rojo),
+
+            0 24px 50px
+            rgba(18, 55, 88, 0.23);
+    }
+
+
+    /* ZOOM DE IMAGEN */
+
+    .proyectos-page .card:hover::before {
+        transform:
+            scale(1.11);
+    }
+
+
+    /* OSCURECIMIENTO INFERIOR */
+
+    .proyectos-page .card:hover::after {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 25, 50, 0.02) 0%,
+                rgba(0, 28, 55, 0.12) 27%,
+                rgba(0, 27, 53, 0.55) 60%,
+                rgba(0, 22, 45, 0.99) 100%
+            );
+    }
+
+}
+
+
+/* =========================================================
+   09. ESTADO ACTIVO
+   UTILIZADO POR proyectos.js
+========================================================= */
+
+.proyectos-page .card.project-active {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0, 84, 154, 0.28);
+
+    box-shadow:
+        inset 0 -7px 0
+        var(--proy-rojo),
+
+        0 22px 46px
+        rgba(18, 55, 88, 0.22);
+}
+
+
+.proyectos-page .card.project-active::before {
+    transform:
+        scale(1.10);
+}
+
+
+.proyectos-page .card.project-active::after {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 25, 50, 0.02) 0%,
+            rgba(0, 28, 55, 0.12) 27%,
+            rgba(0, 27, 53, 0.55) 60%,
+            rgba(0, 22, 45, 0.99) 100%
+        );
+}
+
+
+/* =========================================================
+   10. FOCO CON TECLADO
+========================================================= */
+
+.proyectos-page .card:focus-visible {
+    outline:
+        3px solid
+        rgba(0, 84, 154, 0.42);
+
+    outline-offset: 4px;
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        inset 0 -7px 0
+        var(--proy-rojo),
+
+        0 22px 46px
+        rgba(18, 55, 88, 0.22);
+}
+
+
+.proyectos-page .card:focus-visible::before {
+    transform:
+        scale(1.10);
+}
+
+
+/* =========================================================
+   11. EFECTO AL PRESIONAR
+========================================================= */
+
+.proyectos-page .card:active {
+    transform:
+        translateY(-3px)
+        scale(0.99);
+}
+
+
+/* =========================================================
+   12. ANIMACIÓN DE ENTRADA
+   COMPATIBLE CON proyectos.js
+========================================================= */
+
+.proyectos-page .project-reveal {
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+
+        transform 0.7s
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    transition-delay:
+        var(--project-delay, 0ms);
+}
+
+
+.proyectos-page
+.project-reveal.project-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   13. ANIMACIÓN DE RESPALDO SIN JS
+========================================================= */
+
+@keyframes projectEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+.proyectos-page
+.grid
+.card:not(.project-reveal) {
+    animation:
+        projectEntrance
+        0.65s ease both;
+}
+
+
+.proyectos-page
+.grid
+.card:nth-child(1):not(.project-reveal) {
+    animation-delay: 0.05s;
+}
+
+
+.proyectos-page
+.grid
+.card:nth-child(2):not(.project-reveal) {
+    animation-delay: 0.15s;
+}
+
+
+.proyectos-page
+.grid
+.card:nth-child(3):not(.project-reveal) {
+    animation-delay: 0.25s;
+}
+
+
+/* =========================================================
+   14. EFECTO DE LUZ SUPERIOR
+========================================================= */
+
+.proyectos-page .card {
+    background-blend-mode: normal;
+}
+
+
+@media (hover: hover) {
+
+    .proyectos-page .card:hover {
+        filter:
+            saturate(1.05)
+            contrast(1.02);
+    }
+
+}
+
+
+/* =========================================================
+   15. LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .proyectos-page main {
+        padding:
+            45px 20px
+            75px;
+    }
+
+
+    .proyectos-page .grid {
+        width: 94%;
+
+        gap: 21px;
+    }
+
+
+    .proyectos-page .card {
+        min-height: 350px;
+
+        padding: 27px 23px;
+
+        font-size: 21px;
+    }
+
+}
+
+
+/* =========================================================
+   16. TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .proyectos-page main {
+        padding:
+            40px 20px
+            calc(
+                var(--footer-height) +
+                50px
+            );
+
+        align-items: flex-start;
+    }
+
+
+    .proyectos-page .grid {
+        width: 100%;
+        max-width: 700px;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+
+    .proyectos-page .card {
+        min-height: 330px;
+
+        padding: 25px 22px;
+
+        font-size: 21px;
+    }
+
+
+    /*
+       El tercer proyecto ocupa las dos columnas
+       para evitar un espacio vacío.
+    */
+
+    .proyectos-page
+    .card:nth-child(3) {
+        grid-column: 1 / -1;
+
+        min-height: 310px;
+    }
+
+
+    .proyectos-page
+    .card.project-active {
+        transform:
+            translateY(-5px);
+    }
+
+}
+
+
+/* =========================================================
+   17. CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .proyectos-page main {
+        padding:
+            28px 18px
+            calc(
+                var(--footer-height) +
+                45px
+            );
+    }
+
+
+    .proyectos-page .grid {
+        width: 100%;
+
+        grid-template-columns:
+            1fr;
+
+        gap: 18px;
+    }
+
+
+    /*
+       Quitamos la expansión de tablet.
+    */
+
+    .proyectos-page
+    .card:nth-child(3) {
+        grid-column: auto;
+
+        min-height: 285px;
+    }
+
+
+    .proyectos-page .card {
+        min-height: 285px;
+
+        padding: 23px 21px;
+
+        border-radius: 11px;
+
+        font-size: 21px;
+    }
+
+
+    .proyectos-page
+    .card.project-active {
+        transform:
+            translateY(-3px);
+    }
+
+
+    .proyectos-page
+    .card.project-active::before {
+        transform:
+            scale(1.06);
+    }
+
+}
+
+
+/* =========================================================
+   18. CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .proyectos-page main {
+        padding:
+            22px 15px
+            calc(
+                var(--footer-height) +
+                40px
+            );
+    }
+
+
+    .proyectos-page .grid {
+        gap: 15px;
+    }
+
+
+    .proyectos-page .card,
+    .proyectos-page
+    .card:nth-child(3) {
+        min-height: 250px;
+
+        padding: 20px 18px;
+
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   19. PANTALLAS GRANDES
+========================================================= */
+
+@media (min-width: 1600px) {
+
+    .proyectos-page main {
+        padding:
+            70px 20px
+            100px;
+    }
+
+
+    .proyectos-page .grid {
+        max-width: 1280px;
+
+        gap: 30px;
+    }
+
+
+    .proyectos-page .card {
+        min-height: 450px;
+
+        padding: 36px 31px;
+
+        font-size: 26px;
+    }
+
+}
+
+
+/* =========================================================
+   20. MOVIMIENTO REDUCIDO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .proyectos-page .card,
+    .proyectos-page .card::before,
+    .proyectos-page .card::after,
+    .proyectos-page .project-reveal {
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+
+
+    .proyectos-page .project-reveal {
+        opacity: 1;
+
+        transform: none;
+    }
+
+
+    .proyectos-page
+    .grid
+    .card:not(.project-reveal) {
+        opacity: 1;
+
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   FIN PROYECTOS.CSS
+========================================================= */

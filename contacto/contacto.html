@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contacto</title>
+
+
+    <!-- CSS GENERAL -->
+    <link
+        rel="stylesheet"
+        href="../styles.css"
+    >
+
+
+    <!-- CSS CONTACTO -->
+    <link
+        rel="stylesheet"
+        href="contacto.css"
+    >
+
+
+    <!-- JS GENERAL -->
+    <script
+        src="../app.js"
+        defer
+    ></script>
+
+
+    <!-- JS CONTACTO -->
+    <script
+        src="contacto.js"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="contacto-page">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="main-header">
+
+        <div class="container">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="../index.html"
+                class="logo-link"
+                aria-label="Ir al inicio"
+            >
+
+                <div class="logo">
+
+                    <img
+                        src="../imagenes/Logo.jpeg"
+                        alt="Logo Grupo CIC PERÚ"
+                    >
+
+                    <span>
+                        Grupo CIC PERÚ
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 MENÚ RESPONSIVE
+            ================================================== -->
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menú"
+                aria-controls="mainNav"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- =================================================
+                 NAVEGACIÓN
+            ================================================== -->
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+                aria-label="Navegación principal"
+            >
+
+                <ul>
+
+                    <li>
+                        <a href="../index.html">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../corporacion/corporacion.html">
+                            Corporación
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../servicios/servicios.html">
+                            Servicios
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../bienes/bienes.html">
+                            Bienes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../proyectos/proyectos.html">
+                            Proyectos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../licitaciones/licitaciones.html">
+                            Licitaciones
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="../contacto/contacto.html"
+                            class="active"
+                            aria-current="page"
+                        >
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTACTO
+    ====================================================== -->
+
+    <main>
+
+        <section class="contact-section">
+
+            <div class="contact-info">
+
+
+                <!-- =================================================
+                     CORREO
+                ================================================== -->
+
+                <a
+                    href="mailto:grupocicperu@gmail.com"
+                    class="contact-info-card contact-info-link"
+                    aria-label="Enviar correo a grupocicperu@gmail.com"
+                >
+
+                    <div
+                        class="contact-info-icon"
+                        aria-hidden="true"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+
+                            <path
+                                d="M4 5H20C21.1 5 22 5.9 22 7V17C22 18.1 21.1 19 20 19H4C2.9 19 2 18.1 2 17V7C2 5.9 2.9 5 4 5Z"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M22 7L12 13L2 7"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="contact-info-text">
+
+                        <h3>
+                            Correo
+                        </h3>
+
+                        <p>
+                            grupocicperu@gmail.com
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     TELÉFONO
+                ================================================== -->
+
+                <a
+                    href="tel:+51945340444"
+                    class="contact-info-card contact-info-link"
+                    aria-label="Llamar al 945 340 444"
+                >
+
+                    <div
+                        class="contact-info-icon"
+                        aria-hidden="true"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+
+                            <path
+                                d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92C11.06 20.92 3 12.86 3 2.92C3 2.37 3.45 1.92 4 1.92H7C7.55 1.92 8 2.37 8 2.92C8 4.17 8.2 5.39 8.57 6.52C8.68 6.87 8.6 7.25 8.34 7.51L6.45 9.4C7.68 11.82 9.67 13.81 12.09 15.04L13.98 13.15C14.24 12.89 14.62 12.81 14.97 12.92C16.1 13.29 17.32 13.49 18.57 13.49C19.12 13.49 19.57 13.94 19.57 14.49V16.92H22Z"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="contact-info-text">
+
+                        <h3>
+                            Teléfono
+                        </h3>
+
+                        <p>
+                            +51 945 340 444
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- =================================================
+                     UBICACIÓN
+                ================================================== -->
+
+                <div
+                    class="contact-info-card"
+                    tabindex="0"
+                >
+
+                    <div
+                        class="contact-info-icon"
+                        aria-hidden="true"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+
+                            <path
+                                d="M21 10C21 17 12 22 12 22C12 22 3 17 3 10C3 5.03 7.03 1 12 1C16.97 1 21 5.03 21 10Z"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="10"
+                                r="3"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <div class="contact-info-text">
+
+                        <h3>
+                            Ubicación
+                        </h3>
+
+                        <p>
+                            Lima, Perú
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Grupo CIC PERÚ
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         WHATSAPP
+    ====================================================== -->
+
+    <a
+        href="https://wa.me/51945340444"
+        class="whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+    >
+
+        <img
+            src="../imagenes/whatsapp.png"
+            alt="WhatsApp"
+        >
+
+    </a>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1477 @@
+/* =========================================================
+   GRUPO CIC PERÚ
+   CORPORACION.CSS
+   Página: Corporación
+========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES ESPECÍFICAS
+========================================================= */
+
+.corporacion-page {
+
+    --corp-azul: #00549a;
+    --corp-azul-oscuro: #003f78;
+    --corp-azul-suave: #eef6fc;
+
+    --corp-rojo: #ed1c24;
+
+    --corp-texto: #243b53;
+    --corp-texto-suave: #627d98;
+
+    --corp-blanco: #ffffff;
+    --corp-fondo: #f6f9fc;
+
+    --corp-borde: #e1e9f0;
+
+}
+
+
+/* =========================================================
+   02. MAIN
+========================================================= */
+
+.corporacion-page main {
+
+    width: 100%;
+
+    padding-bottom: 40px;
+
+    background:
+        var(--corp-blanco);
+
+}
+
+
+/* =========================================================
+   03. JUSTIFICACIÓN GENERAL
+========================================================= */
+
+/*
+   Todos los párrafos de contenido de la página Corporación
+   estarán justificados.
+
+   Esto NO afecta títulos, navegación, botones ni etiquetas.
+*/
+
+.corporacion-page main p {
+
+    text-align: justify;
+
+    text-justify: inter-word;
+
+    hyphens: auto;
+
+    -webkit-hyphens: auto;
+
+}
+
+
+/* =========================================================
+   04. SECCIÓN PRINCIPAL CORPORATIVA
+========================================================= */
+
+.corporate-section {
+
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        85px 20px;
+
+    overflow: hidden;
+
+    background:
+        var(--corp-blanco);
+
+}
+
+
+/* DECORACIÓN DE FONDO */
+
+.corporate-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -150px;
+    right: -150px;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 84, 154, 0.035);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   05. CONTENEDOR PRINCIPAL
+========================================================= */
+
+.corporate-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 1180px;
+
+    margin:
+        0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(360px, 0.95fr);
+
+    align-items: center;
+
+    gap: 70px;
+
+}
+
+
+/* =========================================================
+   06. TEXTO CORPORATIVO
+========================================================= */
+
+.corporate-text {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   07. ETIQUETA "NUESTRA EMPRESA"
+========================================================= */
+
+.section-label {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--corp-rojo);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   08. TÍTULO PRINCIPAL
+========================================================= */
+
+.corporate-text h1 {
+
+    position: relative;
+
+    /*
+       Inline-block hace que el ancho del elemento
+       sea exactamente el ancho del texto.
+    */
+
+    display: inline-block;
+
+    margin:
+        0 0 32px;
+
+    padding-bottom: 18px;
+
+    color:
+        var(--corp-azul);
+
+    font-size:
+        clamp(
+            34px,
+            4vw,
+            48px
+        );
+
+    font-weight: 700;
+
+    line-height: 1.12;
+
+}
+
+
+/* =========================================================
+   09. SUBRAYADO ROJO COMPLETO
+========================================================= */
+
+.corporate-text h1::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    /*
+       Ocupa todo el ancho del título.
+    */
+
+    width: 100%;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background:
+        var(--corp-rojo);
+
+}
+
+
+/* =========================================================
+   10. PÁRRAFOS CORPORATIVOS
+========================================================= */
+
+.corporate-text p {
+
+    margin-bottom: 20px;
+
+    color:
+        var(--corp-texto);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    text-align: justify;
+
+    text-justify: inter-word;
+
+    hyphens: auto;
+
+    -webkit-hyphens: auto;
+
+}
+
+
+.corporate-text p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.corporate-text strong {
+
+    color:
+        var(--corp-azul-oscuro);
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   11. IMAGEN CORPORATIVA
+========================================================= */
+
+.corporate-image {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 430px;
+
+}
+
+
+/* BLOQUE AZUL DECORATIVO */
+
+.corporate-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 22px;
+    right: -18px;
+
+    width: 92%;
+    height: 94%;
+
+    border-radius: 12px;
+
+    background:
+        var(--corp-azul);
+
+    opacity: 0.10;
+
+}
+
+
+/* ESQUINA ROJA DECORATIVA */
+
+.corporate-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -9px;
+    bottom: -9px;
+
+    width: 100px;
+    height: 100px;
+
+    border-left:
+        5px solid
+        var(--corp-rojo);
+
+    border-bottom:
+        5px solid
+        var(--corp-rojo);
+
+    border-radius:
+        0 0 0 10px;
+
+    pointer-events: none;
+
+}
+
+
+/* IMAGEN */
+
+.corporate-image img {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height: 430px;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(20, 55, 85, 0.17);
+
+}
+
+
+/* =========================================================
+   12. SECCIÓN MISIÓN - VISIÓN - VALORES
+========================================================= */
+
+.corporate-principles {
+
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        80px 20px
+        100px;
+
+    background:
+        var(--corp-fondo);
+
+}
+
+
+/* =========================================================
+   13. CONTENEDOR DE PRINCIPIOS
+========================================================= */
+
+.principles-container {
+
+    width: 90%;
+    max-width: 1180px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================================
+   14. CABECERA DE PRINCIPIOS
+========================================================= */
+
+.principles-header {
+
+    width: 100%;
+    max-width: 700px;
+
+    margin:
+        0 auto
+        48px;
+
+    text-align: center;
+
+}
+
+
+.principles-header .section-label {
+
+    margin-bottom: 10px;
+
+}
+
+
+.principles-header h2 {
+
+    margin-bottom: 14px;
+
+    color:
+        var(--corp-azul);
+
+    font-size:
+        clamp(
+            30px,
+            3vw,
+            40px
+        );
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+}
+
+
+/*
+   Este párrafo también se justifica.
+*/
+
+.principles-header p {
+
+    max-width: 590px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--corp-texto-suave);
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    text-align: justify;
+
+    text-justify: inter-word;
+
+}
+
+
+/* =========================================================
+   15. GRID DE TARJETAS
+========================================================= */
+
+.corporate-principles .grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 28px;
+
+}
+
+
+/* =========================================================
+   16. TARJETAS
+========================================================= */
+
+.corporate-principles .card {
+
+    position: relative;
+
+    min-height: 285px;
+
+    padding:
+        35px 30px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--corp-borde);
+
+    border-radius: 12px;
+
+    background:
+        var(--corp-blanco);
+
+    box-shadow:
+        0 8px 25px
+        rgba(26, 65, 100, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+/* LÍNEA SUPERIOR DE TARJETAS */
+
+.corporate-principles .card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        var(--corp-azul);
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left center;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+/* HOVER */
+
+.corporate-principles .card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0, 84, 154, 0.22);
+
+    box-shadow:
+        0 18px 40px
+        rgba(26, 65, 100, 0.12);
+
+}
+
+
+.corporate-principles .card:hover::before {
+
+    transform:
+        scaleX(1);
+
+}
+
+
+/* FOCO POR TECLADO */
+
+.corporate-principles .card:focus-visible {
+
+    outline:
+        3px solid
+        rgba(0, 84, 154, 0.20);
+
+    outline-offset: 3px;
+
+}
+
+
+/* =========================================================
+   17. ÍCONOS DE TARJETAS
+========================================================= */
+
+.card-icon {
+
+    width: 54px;
+    height: 54px;
+
+    margin-bottom: 24px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        var(--corp-azul-suave);
+
+    color:
+        var(--corp-azul);
+
+    font-size: 23px;
+    font-weight: 700;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.corporate-principles .card:hover .card-icon {
+
+    background:
+        var(--corp-azul);
+
+    color:
+        var(--corp-blanco);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   18. TÍTULOS DE TARJETAS
+========================================================= */
+
+.corporate-principles .card h3 {
+
+    margin-bottom: 15px;
+
+    color:
+        var(--corp-azul);
+
+    font-size: 22px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-align: left;
+
+}
+
+
+/* =========================================================
+   19. TEXTO DE TARJETAS JUSTIFICADO
+========================================================= */
+
+.corporate-principles .card p {
+
+    margin: 0;
+
+    color:
+        var(--corp-texto-suave);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    text-align: justify;
+
+    text-justify: inter-word;
+
+    hyphens: auto;
+
+    -webkit-hyphens: auto;
+
+}
+
+
+/* =========================================================
+   20. ANIMACIONES CORPORACION.JS
+========================================================= */
+
+.corporate-reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+
+}
+
+
+.corporate-reveal.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* PEQUEÑO ESCALONAMIENTO */
+
+.corporate-principles .card:nth-child(2) {
+
+    transition-delay: 0.08s;
+
+}
+
+
+.corporate-principles .card:nth-child(3) {
+
+    transition-delay: 0.16s;
+
+}
+
+
+/* =========================================================
+   21. ERROR DE IMAGEN
+========================================================= */
+
+.corporate-image.image-error {
+
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        #eef4f8;
+
+}
+
+
+/*
+   Cuando existe error de imagen reutilizamos
+   el pseudo-elemento para mostrar el nombre.
+*/
+
+.corporate-image.image-error::before {
+
+    content:
+        "Grupo CIC PERÚ";
+
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    width: auto;
+    height: auto;
+
+    background:
+        transparent;
+
+    color:
+        var(--corp-azul);
+
+    font-size: 24px;
+    font-weight: 700;
+
+    opacity: 1;
+
+}
+
+
+/* Ocultamos decoración roja si falla imagen */
+
+.corporate-image.image-error::after {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   22. LAPTOPS
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .corporate-content {
+
+        width: 94%;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(320px, 0.9fr);
+
+        gap: 45px;
+
+    }
+
+
+    .principles-container {
+
+        width: 94%;
+
+    }
+
+
+    .corporate-image {
+
+        min-height: 390px;
+
+    }
+
+
+    .corporate-image img {
+
+        height: 390px;
+
+    }
+
+}
+
+
+/* =========================================================
+   23. TABLETS
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .corporacion-page main {
+
+        padding-bottom:
+            var(--footer-height);
+
+    }
+
+
+    /* =====================================================
+       PRESENTACIÓN
+    ====================================================== */
+
+    .corporate-section {
+
+        padding:
+            60px 20px
+            70px;
+
+    }
+
+
+    .corporate-content {
+
+        width: 100%;
+        max-width: 700px;
+
+        grid-template-columns:
+            1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .corporate-text {
+
+        text-align: center;
+
+    }
+
+
+    /*
+       El título sigue siendo inline-block para que
+       el subrayado tenga exactamente su ancho.
+    */
+
+    .corporate-text h1 {
+
+        font-size:
+            clamp(
+                32px,
+                7vw,
+                42px
+            );
+
+    }
+
+
+    /*
+       Ya NO necesitamos mover el ::after al centro
+       porque forma parte del propio h1.
+    */
+
+    .corporate-text h1::after {
+
+        left: 0;
+
+        transform: none;
+
+        width: 100%;
+
+    }
+
+
+    /*
+       IMPORTANTE:
+       también justificado en tablet.
+    */
+
+    .corporate-text p {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        text-align: justify;
+
+        text-justify: inter-word;
+
+    }
+
+
+    /* =====================================================
+       IMAGEN
+    ====================================================== */
+
+    .corporate-image {
+
+        width: 100%;
+        max-width: 650px;
+
+        min-height: 390px;
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .corporate-image img {
+
+        width: 100%;
+        height: 390px;
+
+    }
+
+
+    .corporate-image::before {
+
+        right: -10px;
+
+    }
+
+
+    /* =====================================================
+       PRINCIPIOS
+    ====================================================== */
+
+    .corporate-principles {
+
+        padding:
+            65px 20px
+            90px;
+
+    }
+
+
+    .principles-container {
+
+        width: 100%;
+        max-width: 700px;
+
+    }
+
+
+    .principles-header {
+
+        margin-bottom: 38px;
+
+    }
+
+
+    .principles-header p {
+
+        font-size: 15px;
+
+        text-align: justify;
+
+    }
+
+
+    .corporate-principles .grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .corporate-principles .card {
+
+        min-height: auto;
+
+        padding:
+            30px;
+
+    }
+
+
+    .corporate-principles .card p {
+
+        text-align: justify;
+
+    }
+
+}
+
+
+/* =========================================================
+   24. CELULARES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* =====================================================
+       SECCIÓN CORPORATIVA
+    ====================================================== */
+
+    .corporate-section {
+
+        padding:
+            45px 18px
+            55px;
+
+    }
+
+
+    .corporate-content {
+
+        gap: 35px;
+
+    }
+
+
+    .section-label {
+
+        margin-bottom: 9px;
+
+        font-size: 11px;
+
+        letter-spacing: 1.4px;
+
+    }
+
+
+    /* =====================================================
+       TÍTULO
+    ====================================================== */
+
+    .corporate-text h1 {
+
+        margin-bottom: 25px;
+
+        padding-bottom: 14px;
+
+        font-size:
+            clamp(
+                29px,
+                9vw,
+                36px
+            );
+
+    }
+
+
+    .corporate-text h1::after {
+
+        width: 100%;
+        height: 3px;
+
+    }
+
+
+    /* =====================================================
+       TEXTO JUSTIFICADO EN CELULAR
+    ====================================================== */
+
+    .corporate-text p {
+
+        margin-bottom: 17px;
+
+        font-size: 14px;
+
+        line-height: 1.68;
+
+        text-align: justify;
+
+        text-justify: inter-word;
+
+        /*
+           En pantallas estrechas la separación automática
+           ayuda a evitar espacios demasiado grandes.
+        */
+
+        hyphens: auto;
+
+        -webkit-hyphens: auto;
+
+    }
+
+
+    /* =====================================================
+       IMAGEN
+    ====================================================== */
+
+    .corporate-image {
+
+        min-height: 280px;
+
+    }
+
+
+    .corporate-image img {
+
+        height: 280px;
+
+        border-radius: 8px;
+
+    }
+
+
+    .corporate-image::before {
+
+        top: 12px;
+        right: -7px;
+
+    }
+
+
+    .corporate-image::after {
+
+        left: -6px;
+        bottom: -6px;
+
+        width: 65px;
+        height: 65px;
+
+        border-left-width: 3px;
+        border-bottom-width: 3px;
+
+    }
+
+
+    /* =====================================================
+       PRINCIPIOS
+    ====================================================== */
+
+    .corporate-principles {
+
+        padding:
+            50px 18px
+            80px;
+
+    }
+
+
+    .principles-header {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .principles-header h2 {
+
+        margin-bottom: 12px;
+
+        font-size:
+            clamp(
+                27px,
+                8vw,
+                33px
+            );
+
+    }
+
+
+    .principles-header p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        text-align: justify;
+
+    }
+
+
+    .corporate-principles .grid {
+
+        gap: 17px;
+
+    }
+
+
+    .corporate-principles .card {
+
+        padding:
+            26px 22px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .card-icon {
+
+        width: 48px;
+        height: 48px;
+
+        margin-bottom: 19px;
+
+        font-size: 20px;
+
+    }
+
+
+    .corporate-principles .card h3 {
+
+        margin-bottom: 11px;
+
+        font-size: 20px;
+
+    }
+
+
+    .corporate-principles .card p {
+
+        font-size: 14px;
+
+        line-height: 1.65;
+
+        text-align: justify;
+
+    }
+
+}
+
+
+/* =========================================================
+   25. CELULARES MUY PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .corporate-section {
+
+        padding:
+            38px 15px
+            48px;
+
+    }
+
+
+    .corporate-text h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .corporate-text p {
+
+        font-size: 13.5px;
+
+        line-height: 1.65;
+
+        text-align: justify;
+
+    }
+
+
+    .corporate-image {
+
+        min-height: 240px;
+
+    }
+
+
+    .corporate-image img {
+
+        height: 240px;
+
+    }
+
+
+    .corporate-principles {
+
+        padding:
+            45px 15px
+            75px;
+
+    }
+
+
+    .principles-header h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .principles-header p {
+
+        font-size: 13.5px;
+
+        text-align: justify;
+
+    }
+
+
+    .corporate-principles .card {
+
+        padding:
+            23px 19px;
+
+    }
+
+
+    .corporate-principles .card p {
+
+        font-size: 13.5px;
+
+        text-align: justify;
+
+    }
+
+}
+
+
+/* =========================================================
+   26. PANTALLAS GRANDES
+========================================================= */
+
+@media (min-width: 1600px) {
+
+    .corporate-content,
+    .principles-container {
+
+        max-width: 1280px;
+
+    }
+
+
+    .corporate-section {
+
+        padding:
+            100px 20px;
+
+    }
+
+
+    .corporate-content {
+
+        gap: 85px;
+
+    }
+
+
+    .corporate-text p {
+
+        font-size: 17px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .corporate-image {
+
+        min-height: 470px;
+
+    }
+
+
+    .corporate-image img {
+
+        height: 470px;
+
+    }
+
+
+    .corporate-principles {
+
+        padding:
+            95px 20px
+            115px;
+
+    }
+
+
+    .corporate-principles .card p {
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+/* =========================================================
+   27. MOVIMIENTO REDUCIDO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .corporate-reveal {
+
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+
+    }
+
+
+    .corporate-principles .card,
+    .corporate-principles .card::before,
+    .card-icon {
+
+        transition: none;
+
+    }
+
+}
+
+
+/* =========================================================
+   FIN
+   CORPORACION.CSS
+========================================================= */

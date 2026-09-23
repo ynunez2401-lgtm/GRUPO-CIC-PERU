@@ -1,0 +1,1023 @@
+/* =========================================================
+   GRUPO CIC PERÚ
+   CONTACTO.CSS
+========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES
+========================================================= */
+
+.contacto-page {
+    --contact-azul: #00549a;
+    --contact-azul-oscuro: #003f78;
+    --contact-rojo: #ed1c24;
+    --contact-blanco: #ffffff;
+    --contact-texto: #243b53;
+    --contact-texto-suave: #627d98;
+    --contact-borde: #d8e2eb;
+    --contact-fondo: #f4f7fa;
+
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background: var(--contact-fondo);
+}
+
+
+/* =========================================================
+   02. BOX SIZING
+========================================================= */
+
+.contacto-page *,
+.contacto-page *::before,
+.contacto-page *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   03. CONTENIDO PRINCIPAL
+========================================================= */
+
+.contacto-page main {
+    position: relative;
+
+    width: 100%;
+
+    min-height: calc(
+        100vh -
+        var(--header-height) -
+        var(--footer-height)
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 24px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(0, 84, 154, 0.08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(237, 28, 36, 0.045),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f7f9fc 48%,
+            #eef4f8 100%
+        );
+}
+
+
+/* =========================================================
+   04. DECORACIÓN DE FONDO
+========================================================= */
+
+.contacto-page main::before {
+    content: "";
+
+    position: absolute;
+
+    top: -230px;
+    right: -150px;
+
+    width: 430px;
+    height: 430px;
+
+    border:
+        1px solid
+        rgba(0, 84, 154, 0.08);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.contacto-page main::after {
+    content: "";
+
+    position: absolute;
+
+    left: -170px;
+    bottom: -200px;
+
+    width: 360px;
+    height: 360px;
+
+    border:
+        1px solid
+        rgba(237, 28, 36, 0.07);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   05. SECCIÓN
+========================================================= */
+
+.contacto-page .contact-section {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   06. CONTENEDOR DE TARJETAS
+========================================================= */
+
+.contacto-page .contact-info {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   07. TARJETA
+========================================================= */
+
+.contacto-page .contact-info-card {
+    position: relative;
+
+    min-width: 0;
+    min-height: 235px;
+
+    padding: 35px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.97);
+
+    border:
+        1px solid
+        var(--contact-borde);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 14px 35px
+        rgba(25, 57, 86, 0.09);
+
+    overflow: hidden;
+
+    outline: none;
+
+    transition:
+        transform 0.35s
+        cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* =========================================================
+   08. LÍNEA SUPERIOR
+========================================================= */
+
+.contacto-page
+.contact-info-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--contact-azul) 0%,
+            var(--contact-azul) 75%,
+            var(--contact-rojo) 75%,
+            var(--contact-rojo) 100%
+        );
+}
+
+
+/* =========================================================
+   09. DECORACIÓN INTERIOR
+========================================================= */
+
+.contacto-page
+.contact-info-card::after {
+    content: "";
+
+    position: absolute;
+
+    right: -70px;
+    bottom: -75px;
+
+    width: 145px;
+    height: 145px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 84, 154, 0.035);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   10. ICONO
+========================================================= */
+
+.contacto-page .contact-info-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color:
+        var(--contact-azul);
+
+    background:
+        rgba(0, 84, 154, 0.07);
+
+    border:
+        1px solid
+        rgba(0, 84, 154, 0.10);
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease,
+        color 0.35s ease;
+}
+
+
+/* =========================================================
+   11. SVG
+========================================================= */
+
+.contacto-page
+.contact-info-icon svg {
+    width: 30px;
+    height: 30px;
+
+    display: block;
+}
+
+
+/* =========================================================
+   12. CONTENIDO
+========================================================= */
+
+.contacto-page .contact-info-text {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   13. TÍTULO
+========================================================= */
+
+.contacto-page
+.contact-info-text h3 {
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0 0 15px;
+
+    padding-bottom: 9px;
+
+    color:
+        var(--contact-azul-oscuro);
+
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   14. LÍNEA ROJA DEL TÍTULO
+========================================================= */
+
+.contacto-page
+.contact-info-text h3::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 3px;
+
+    border-radius: 5px;
+
+    background:
+        var(--contact-rojo);
+}
+
+
+/* =========================================================
+   15. TEXTO
+========================================================= */
+
+.contacto-page
+.contact-info-text p {
+    width: 100%;
+
+    margin: 0;
+
+    color:
+        var(--contact-texto);
+
+    font-size: 15px;
+    font-weight: 500;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   16. ENLACES
+========================================================= */
+
+.contacto-page
+.contact-info-text a {
+    color:
+        var(--contact-texto);
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+/* =========================================================
+   17. HOVER DE ENLACES
+========================================================= */
+
+@media (hover: hover) {
+
+    .contacto-page
+    .contact-info-text a:hover {
+        color:
+            var(--contact-azul);
+
+        text-decoration: underline;
+
+        text-underline-offset: 4px;
+    }
+
+}
+
+
+/* =========================================================
+   18. HOVER DE TARJETAS
+========================================================= */
+
+@media (hover: hover) {
+
+    .contacto-page
+    .contact-info-card:hover {
+        transform:
+            translateY(-8px);
+
+        border-color:
+            rgba(0, 84, 154, 0.22);
+
+        box-shadow:
+            0 24px 50px
+            rgba(25, 57, 86, 0.15);
+    }
+
+
+    .contacto-page
+    .contact-info-card:hover
+    .contact-info-icon {
+        transform:
+            translateY(-3px)
+            scale(1.06);
+
+        color:
+            var(--contact-blanco);
+
+        background:
+            var(--contact-azul);
+    }
+
+}
+
+
+/* =========================================================
+   19. FOCUS CON TECLADO
+========================================================= */
+
+.contacto-page
+.contact-info-card:focus-visible {
+    border-color:
+        var(--contact-azul);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(0, 84, 154, 0.10),
+        0 20px 45px
+        rgba(25, 57, 86, 0.13);
+}
+
+
+/* =========================================================
+   20. ANIMACIÓN DEL JS
+========================================================= */
+
+.contacto-page
+.contact-info-card.contact-reveal {
+    opacity: 0;
+
+    transform:
+        translateY(25px)
+        scale(0.985);
+
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s
+        cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.contacto-page
+.contact-info-card.contact-reveal.contact-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   21. LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .contacto-page main {
+        padding:
+            26px 22px;
+    }
+
+
+    .contacto-page
+    .contact-info {
+        gap:
+            18px;
+    }
+
+
+    .contacto-page
+    .contact-info-card {
+        min-height:
+            220px;
+
+        padding:
+            30px 20px;
+    }
+
+
+    .contacto-page
+    .contact-info-icon {
+        width:
+            58px;
+
+        height:
+            58px;
+
+        margin-bottom:
+            18px;
+    }
+
+
+    .contacto-page
+    .contact-info-icon svg {
+        width:
+            27px;
+
+        height:
+            27px;
+    }
+
+}
+
+
+/* =========================================================
+   22. TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .contacto-page main {
+        align-items: center;
+
+        padding:
+            22px 20px;
+    }
+
+
+    .contacto-page
+    .contact-info {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap:
+            12px;
+    }
+
+
+    .contacto-page
+    .contact-info-card {
+        min-height:
+            195px;
+
+        padding:
+            25px 14px;
+
+        border-radius:
+            13px;
+    }
+
+
+    .contacto-page
+    .contact-info-icon {
+        width:
+            52px;
+
+        height:
+            52px;
+
+        margin-bottom:
+            15px;
+    }
+
+
+    .contacto-page
+    .contact-info-icon svg {
+        width:
+            24px;
+
+        height:
+            24px;
+    }
+
+
+    .contacto-page
+    .contact-info-text h3 {
+        margin-bottom:
+            12px;
+
+        padding-bottom:
+            7px;
+
+        font-size:
+            17px;
+    }
+
+
+    .contacto-page
+    .contact-info-text p {
+        font-size:
+            13px;
+
+        line-height:
+            1.5;
+    }
+
+}
+
+
+/* =========================================================
+   23. CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contacto-page main {
+        padding:
+            15px 16px;
+    }
+
+
+    .contacto-page
+    .contact-section {
+        max-width:
+            430px;
+    }
+
+
+    .contacto-page
+    .contact-info {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            10px;
+    }
+
+
+    .contacto-page
+    .contact-info-card {
+        min-height: 0;
+
+        padding:
+            17px 18px;
+
+        display: grid;
+
+        grid-template-columns:
+            50px minmax(0, 1fr);
+
+        gap:
+            15px;
+
+        align-items: center;
+
+        text-align: left;
+
+        border-radius:
+            12px;
+    }
+
+
+    .contacto-page
+    .contact-info-card::before {
+        width:
+            4px;
+
+        height:
+            100%;
+
+        background:
+            linear-gradient(
+                180deg,
+                var(--contact-azul) 0%,
+                var(--contact-azul) 75%,
+                var(--contact-rojo) 75%,
+                var(--contact-rojo) 100%
+            );
+    }
+
+
+    .contacto-page
+    .contact-info-icon {
+        width:
+            50px;
+
+        height:
+            50px;
+
+        margin:
+            0;
+
+        grid-column:
+            1;
+    }
+
+
+    .contacto-page
+    .contact-info-icon svg {
+        width:
+            23px;
+
+        height:
+            23px;
+    }
+
+
+    .contacto-page
+    .contact-info-text {
+        grid-column:
+            2;
+    }
+
+
+    .contacto-page
+    .contact-info-text h3 {
+        margin:
+            0 0 7px;
+
+        padding-bottom:
+            5px;
+
+        font-size:
+            16px;
+
+        text-align:
+            left;
+    }
+
+
+    .contacto-page
+    .contact-info-text h3::after {
+        width:
+            100%;
+    }
+
+
+    .contacto-page
+    .contact-info-text p {
+        font-size:
+            14px;
+
+        line-height:
+            1.4;
+
+        text-align:
+            left;
+    }
+
+}
+
+
+/* =========================================================
+   24. CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .contacto-page main {
+        padding:
+            10px 12px;
+    }
+
+
+    .contacto-page
+    .contact-info {
+        gap:
+            8px;
+    }
+
+
+    .contacto-page
+    .contact-info-card {
+        padding:
+            14px 14px;
+
+        grid-template-columns:
+            44px minmax(0, 1fr);
+
+        gap:
+            12px;
+    }
+
+
+    .contacto-page
+    .contact-info-icon {
+        width:
+            44px;
+
+        height:
+            44px;
+    }
+
+
+    .contacto-page
+    .contact-info-icon svg {
+        width:
+            21px;
+
+        height:
+            21px;
+    }
+
+
+    .contacto-page
+    .contact-info-text h3 {
+        font-size:
+            15px;
+    }
+
+
+    .contacto-page
+    .contact-info-text p {
+        font-size:
+            13px;
+    }
+
+}
+
+
+/* =========================================================
+   25. PANTALLAS DE POCA ALTURA
+   EVITA SCROLL EN LAPTOP
+========================================================= */
+
+@media (max-height: 700px) and (min-width: 601px) {
+
+    .contacto-page main {
+        padding:
+            14px 20px;
+    }
+
+
+    .contacto-page
+    .contact-info-card {
+        min-height:
+            180px;
+
+        padding:
+            20px 18px;
+    }
+
+
+    .contacto-page
+    .contact-info-icon {
+        width:
+            50px;
+
+        height:
+            50px;
+
+        margin-bottom:
+            12px;
+    }
+
+
+    .contacto-page
+    .contact-info-icon svg {
+        width:
+            23px;
+
+        height:
+            23px;
+    }
+
+
+    .contacto-page
+    .contact-info-text h3 {
+        margin-bottom:
+            10px;
+
+        font-size:
+            17px;
+    }
+
+
+    .contacto-page
+    .contact-info-text p {
+        font-size:
+            13px;
+    }
+
+}
+
+
+/* =========================================================
+   26. PANTALLAS GRANDES
+========================================================= */
+
+@media (min-width: 1600px) {
+
+    .contacto-page
+    .contact-section {
+        max-width:
+            1280px;
+    }
+
+
+    .contacto-page
+    .contact-info {
+        gap:
+            30px;
+    }
+
+
+    .contacto-page
+    .contact-info-card {
+        min-height:
+            260px;
+
+        padding:
+            40px 30px;
+    }
+
+
+    .contacto-page
+    .contact-info-icon {
+        width:
+            70px;
+
+        height:
+            70px;
+    }
+
+
+    .contacto-page
+    .contact-info-icon svg {
+        width:
+            32px;
+
+        height:
+            32px;
+    }
+
+
+    .contacto-page
+    .contact-info-text h3 {
+        font-size:
+            22px;
+    }
+
+
+    .contacto-page
+    .contact-info-text p {
+        font-size:
+            16px;
+    }
+
+}
+
+
+/* =========================================================
+   27. MOVIMIENTO REDUCIDO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contacto-page
+    .contact-info-card,
+
+    .contacto-page
+    .contact-info-icon,
+
+    .contacto-page
+    .contact-info-text a {
+
+        transition:
+            none !important;
+    }
+
+
+    .contacto-page
+    .contact-info-card.contact-reveal {
+        opacity: 1;
+
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   FIN CONTACTO.CSS
+========================================================= */

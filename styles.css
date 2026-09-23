@@ -1,0 +1,2022 @@
+/* =========================================================
+   GRUPO CIC PERÚ
+   STYLES.CSS
+   RESPONSIVE + MENÚ MÓVIL
+========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES
+========================================================= */
+
+:root {
+
+    --azul-principal: #00549a;
+    --azul-oscuro: #003f78;
+    --azul-claro: #5e8fb9;
+
+    --rojo: #ed1c24;
+    --rojo-hover: #c9141c;
+
+    --verde-whatsapp: #25d366;
+
+    --blanco: #ffffff;
+
+    --texto: #243b53;
+    --texto-suave: #6b7c8f;
+
+    --borde: #d5dee7;
+
+    --header-height: 102px;
+    --footer-height: 40px;
+
+}
+
+
+/* =========================================================
+   02. RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    width: 100%;
+    min-height: 100%;
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        var(--blanco);
+
+    color:
+        var(--texto);
+
+    -webkit-font-smoothing:
+        antialiased;
+
+    text-rendering:
+        optimizeLegibility;
+
+}
+
+
+body.modal-open {
+
+    overflow: hidden;
+
+}
+
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+a {
+
+    color: inherit;
+
+}
+
+
+button,
+input,
+textarea {
+
+    font: inherit;
+
+}
+
+
+/* =========================================================
+   03. HEADER
+========================================================= */
+
+.main-header {
+
+    position: relative;
+
+    z-index: 500;
+
+    width: 100%;
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+
+    background:
+        var(--blanco);
+
+    box-shadow:
+        0 1px 5px
+        rgba(0, 0, 0, .08);
+
+}
+
+
+.main-header .container {
+
+    width: 90%;
+    max-width: 1280px;
+    height: 100%;
+
+    margin:
+        0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+/* =========================================================
+   04. LOGO
+========================================================= */
+
+.logo-link {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.logo img {
+
+    width: 46px;
+    height: 46px;
+
+    object-fit: contain;
+
+}
+
+
+.logo span {
+
+    color:
+        var(--azul-principal);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   05. NAVEGACIÓN DESKTOP
+========================================================= */
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.main-nav ul {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 29px;
+
+    list-style: none;
+
+}
+
+
+.main-nav li {
+
+    list-style: none;
+
+}
+
+
+.main-nav a {
+
+    position: relative;
+
+    display: inline-block;
+
+    padding:
+        9px 0;
+
+    color:
+        #004a89;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color .25s ease;
+
+}
+
+
+.main-nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 2px;
+
+    width: 0;
+    height: 2px;
+
+    background:
+        var(--azul-principal);
+
+    transform:
+        translateX(-50%);
+
+    transition:
+        width .25s ease;
+
+}
+
+
+.main-nav a:hover {
+
+    color:
+        var(--azul-oscuro);
+
+}
+
+
+.main-nav a:hover::after {
+
+    width: 100%;
+
+}
+
+
+.main-nav a.active {
+
+    color:
+        var(--azul-principal);
+
+    font-weight: 700;
+
+}
+
+
+.main-nav a.active::after {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   06. BOTÓN HAMBURGUESA
+========================================================= */
+
+.menu-toggle {
+
+    display: none;
+
+    position: relative;
+
+    z-index: 1002;
+
+    width: 46px;
+    height: 46px;
+
+    padding: 8px;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    background:
+        transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+}
+
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 26px;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background:
+        var(--azul-principal);
+
+    transform-origin: center;
+
+    transition:
+        transform .3s ease,
+        opacity .2s ease,
+        background .3s ease;
+
+}
+
+
+/* =========================================================
+   07. HAMBURGUESA → X
+========================================================= */
+
+.menu-toggle.active span:nth-child(1) {
+
+    transform:
+        translateY(8px)
+        rotate(45deg);
+
+}
+
+
+.menu-toggle.active span:nth-child(2) {
+
+    opacity: 0;
+
+    transform:
+        scaleX(0);
+
+}
+
+
+.menu-toggle.active span:nth-child(3) {
+
+    transform:
+        translateY(-8px)
+        rotate(-45deg);
+
+}
+
+
+/* =========================================================
+   08. MAIN
+========================================================= */
+
+main {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   09. HERO
+========================================================= */
+
+.hero-full {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height:
+        calc(
+            100vh
+            - var(--header-height)
+            - var(--footer-height)
+        );
+
+    min-height:
+        calc(
+            100dvh
+            - var(--header-height)
+            - var(--footer-height)
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        50px 20px
+        70px;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            rgba(73, 123, 166, .60),
+            rgba(73, 123, 166, .60)
+        ),
+
+        url("imagenes/edificios.jpg")
+        center center / cover
+        no-repeat;
+
+}
+
+
+.hero-full::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(33, 82, 126, .06),
+            rgba(22, 68, 108, .20)
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   10. HERO - CONTENIDO
+========================================================= */
+
+.overlay {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 650px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--blanco);
+
+    text-align: center;
+
+}
+
+
+.overlay h1 {
+
+    margin-bottom: 30px;
+
+    color:
+        var(--blanco);
+
+    font-size:
+        clamp(
+            40px,
+            4vw,
+            52px
+        );
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 2px 12px
+        rgba(0, 0, 0, .12);
+
+}
+
+
+.hero-subtitle {
+
+    margin-bottom: 24px;
+
+    color:
+        var(--blanco);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    text-shadow:
+        0 1px 5px
+        rgba(0, 0, 0, .15);
+
+}
+
+
+.hero-description {
+
+    max-width: 590px;
+
+    margin:
+        0 auto
+        34px;
+
+    color:
+        var(--blanco);
+
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    text-wrap: balance;
+
+    text-shadow:
+        0 1px 5px
+        rgba(0, 0, 0, .15);
+
+}
+
+
+/* =========================================================
+   11. BOTÓN CONTÁCTANOS
+========================================================= */
+
+.btn-contact {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 153px;
+    min-height: 53px;
+
+    padding:
+        14px 27px;
+
+    border: 0;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background:
+        var(--rojo);
+
+    color:
+        var(--blanco);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(120, 0, 0, .15);
+
+    transition:
+        background .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+.btn-contact:hover {
+
+    background:
+        var(--rojo-hover);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 9px 23px
+        rgba(120, 0, 0, .22);
+
+}
+
+
+.btn-contact:active {
+
+    transform:
+        translateY(0)
+        scale(.98);
+
+}
+
+
+/* =========================================================
+   12. MODAL
+========================================================= */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    width: 100%;
+    height: 100%;
+
+    padding:
+        25px 15px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background:
+        rgba(8, 35, 60, .72);
+
+    opacity: 0;
+
+    backdrop-filter:
+        blur(5px);
+
+    -webkit-backdrop-filter:
+        blur(5px);
+
+    transition:
+        opacity .2s ease;
+
+}
+
+
+.modal.show {
+
+    opacity: 1;
+
+}
+
+
+/* =========================================================
+   13. CONTENIDO MODAL
+========================================================= */
+
+.modal-content {
+
+    position: relative;
+
+    width: 90%;
+    max-width: 520px;
+
+    margin:
+        10px auto;
+
+    padding:
+        34px 35px;
+
+    border-radius: 10px;
+
+    background:
+        var(--blanco);
+
+    color:
+        var(--texto);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, .30);
+
+    transform:
+        translateY(22px)
+        scale(.98);
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.modal.show .modal-content {
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+.modal-content h2 {
+
+    margin:
+        0 35px
+        26px;
+
+    color:
+        var(--azul-principal);
+
+    font-size: 29px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   14. CERRAR MODAL
+========================================================= */
+
+.close {
+
+    position: absolute;
+
+    top: 11px;
+    right: 14px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    background:
+        transparent;
+
+    color:
+        #777777;
+
+    font-size: 32px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.close:hover {
+
+    color:
+        var(--rojo);
+
+    transform:
+        scale(1.1);
+
+}
+
+
+/* =========================================================
+   15. FORMULARIO
+========================================================= */
+
+.contact-form {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.contact-form label {
+
+    margin-bottom: 6px;
+
+    color:
+        var(--texto);
+
+    font-size: 14px;
+    font-weight: 700;
+
+}
+
+
+.contact-form input,
+.contact-form textarea {
+
+    width: 100%;
+
+    margin-bottom: 17px;
+
+    padding:
+        12px 14px;
+
+    border:
+        1px solid
+        var(--borde);
+
+    border-radius: 5px;
+
+    outline: none;
+
+    background:
+        var(--blanco);
+
+    color:
+        var(--texto);
+
+    font-size: 15px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.contact-form input {
+
+    min-height: 44px;
+
+}
+
+
+.contact-form textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+
+}
+
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+
+    color:
+        #a5adb5;
+
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+
+    border-color:
+        var(--azul-principal);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 84, 154, .10);
+
+}
+
+
+.contact-form .btn-contact {
+
+    align-self: center;
+
+    min-width: 153px;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================================
+   16. TEXTO WHATSAPP FORMULARIO
+========================================================= */
+
+.form-whatsapp-info {
+
+    max-width: 360px;
+
+    margin:
+        13px auto
+        0;
+
+    color:
+        var(--texto-suave);
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   17. FOOTER
+========================================================= */
+
+footer {
+
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    z-index: 400;
+
+    width: 100%;
+    height: var(--footer-height);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        8px 20px;
+
+    background:
+        var(--azul-principal);
+
+    color:
+        var(--blanco);
+
+    text-align: center;
+
+}
+
+
+footer p {
+
+    margin: 0;
+
+    color:
+        var(--blanco);
+
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   18. WHATSAPP FLOTANTE
+========================================================= */
+
+.whatsapp {
+
+    position: fixed;
+
+    right: 20px;
+    bottom: 18px;
+
+    z-index: 600;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--verde-whatsapp);
+
+    text-decoration: none;
+
+    box-shadow:
+        0 6px 20px
+        rgba(0, 0, 0, .25);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+.whatsapp img {
+
+    width: 36px;
+    height: 36px;
+
+    object-fit: contain;
+
+}
+
+
+.whatsapp:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.05);
+
+    box-shadow:
+        0 10px 28px
+        rgba(0, 0, 0, .30);
+
+}
+
+
+/* =========================================================
+   19. LAPTOPS PEQUEÑAS
+========================================================= */
+
+@media
+(min-width: 851px)
+and
+(max-width: 1100px) {
+
+    .main-header .container {
+
+        width: 94%;
+
+    }
+
+
+    .main-nav ul {
+
+        gap: 17px;
+
+    }
+
+
+    .main-nav a {
+
+        font-size: 14px;
+
+    }
+
+
+    .logo span {
+
+        font-size: 15px;
+
+    }
+
+}
+
+
+/* =========================================================
+   20. TABLET + CELULAR
+   MENÚ DESPLEGABLE
+========================================================= */
+
+@media (max-width: 850px) {
+
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    :root {
+
+        --header-height: 74px;
+        --footer-height: 38px;
+
+    }
+
+
+    .main-header {
+
+        position: relative;
+
+        height:
+            var(--header-height);
+
+        min-height:
+            var(--header-height);
+
+    }
+
+
+    .main-header .container {
+
+        width: 100%;
+        height: 100%;
+
+        margin: 0;
+
+        padding:
+            0 18px;
+
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 0;
+
+    }
+
+
+    /* -----------------------------------------------------
+       LOGO
+    ----------------------------------------------------- */
+
+    .logo {
+
+        gap: 9px;
+
+    }
+
+
+    .logo img {
+
+        width: 42px;
+        height: 42px;
+
+    }
+
+
+    .logo span {
+
+        font-size: 15px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       HAMBURGUESA
+    ----------------------------------------------------- */
+
+    .menu-toggle {
+
+        display: flex;
+
+    }
+
+
+    /* -----------------------------------------------------
+       MENÚ
+    ----------------------------------------------------- */
+
+    .main-nav {
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: block;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        background:
+            rgba(255, 255, 255, .985);
+
+        box-shadow:
+            0 16px 30px
+            rgba(0, 0, 0, .14);
+
+        transform:
+            translateY(-8px);
+
+        transition:
+            max-height .4s ease,
+            opacity .25s ease,
+            transform .3s ease,
+            visibility .3s ease;
+
+    }
+
+
+    .main-nav.open {
+
+        max-height: 600px;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    .main-nav ul {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        gap: 0;
+
+        padding:
+            8px 18px
+            18px;
+
+    }
+
+
+    .main-nav li {
+
+        width: 100%;
+
+    }
+
+
+    .main-nav a {
+
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        padding:
+            15px 8px;
+
+        border-bottom:
+            1px solid
+            rgba(0, 84, 154, .10);
+
+        color:
+            var(--azul-principal);
+
+        font-size: 15px;
+        font-weight: 600;
+
+        line-height: 1.2;
+
+        text-decoration: none;
+
+    }
+
+
+    .main-nav li:last-child a {
+
+        border-bottom: 0;
+
+    }
+
+
+    .main-nav a::after {
+
+        display: none;
+
+    }
+
+
+    .main-nav a.active {
+
+        color:
+            var(--rojo);
+
+        font-weight: 700;
+
+    }
+
+
+    .main-nav a:active {
+
+        background:
+            rgba(0, 84, 154, .06);
+
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero-full {
+
+        min-height:
+            calc(
+                100dvh
+                - var(--header-height)
+                - var(--footer-height)
+            );
+
+        padding:
+            55px 20px
+            85px;
+
+        background-position:
+            center center;
+
+    }
+
+
+    .overlay {
+
+        width: 100%;
+
+        max-width: 550px;
+
+    }
+
+
+    .overlay h1 {
+
+        margin-bottom: 22px;
+
+        font-size:
+            clamp(
+                34px,
+                8vw,
+                44px
+            );
+
+    }
+
+
+    .hero-subtitle {
+
+        margin-bottom: 18px;
+
+        font-size: 15px;
+
+    }
+
+
+    .hero-description {
+
+        max-width: 460px;
+
+        margin-bottom: 29px;
+
+        font-size: 14px;
+
+        line-height: 1.55;
+
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    footer {
+
+        height:
+            var(--footer-height);
+
+    }
+
+
+    footer p {
+
+        font-size: 13px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       WHATSAPP
+    ----------------------------------------------------- */
+
+    .whatsapp {
+
+        right: 15px;
+
+        bottom:
+            calc(
+                var(--footer-height)
+                + 14px
+            );
+
+        width: 56px;
+        height: 56px;
+
+    }
+
+
+    .whatsapp img {
+
+        width: 32px;
+        height: 32px;
+
+    }
+
+}
+
+
+/* =========================================================
+   21. CELULARES
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+    :root {
+
+        --header-height: 68px;
+
+    }
+
+
+    .main-header {
+
+        height:
+            var(--header-height);
+
+        min-height:
+            var(--header-height);
+
+    }
+
+
+    .main-header .container {
+
+        padding:
+            0 14px;
+
+    }
+
+
+    /* LOGO */
+
+    .logo {
+
+        gap: 8px;
+
+    }
+
+
+    .logo img {
+
+        width: 39px;
+        height: 39px;
+
+    }
+
+
+    .logo span {
+
+        font-size: 14px;
+
+    }
+
+
+    /* HAMBURGUESA */
+
+    .menu-toggle {
+
+        width: 43px;
+        height: 43px;
+
+        padding: 7px;
+
+    }
+
+
+    .menu-toggle span {
+
+        width: 25px;
+
+    }
+
+
+    /* MENÚ */
+
+    .main-nav ul {
+
+        padding:
+            5px 16px
+            16px;
+
+    }
+
+
+    .main-nav a {
+
+        padding:
+            14px 7px;
+
+        font-size: 14px;
+
+    }
+
+
+    /* HERO */
+
+    .hero-full {
+
+        min-height:
+            calc(
+                100dvh
+                - var(--header-height)
+                - var(--footer-height)
+            );
+
+        padding:
+            42px 18px
+            82px;
+
+    }
+
+
+    .overlay h1 {
+
+        margin-bottom: 19px;
+
+        font-size:
+            clamp(
+                31px,
+                10vw,
+                39px
+            );
+
+    }
+
+
+    .hero-subtitle {
+
+        margin-bottom: 16px;
+
+        font-size: 14px;
+
+        line-height: 1.45;
+
+    }
+
+
+    .hero-description {
+
+        max-width: 380px;
+
+        margin-bottom: 27px;
+
+        font-size: 13.5px;
+
+        line-height: 1.55;
+
+    }
+
+
+    /* BOTÓN */
+
+    .btn-contact {
+
+        min-width: 145px;
+        min-height: 49px;
+
+        padding:
+            12px 23px;
+
+        font-size: 14px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       MODAL
+    ----------------------------------------------------- */
+
+    .modal {
+
+        padding:
+            12px 8px;
+
+    }
+
+
+    .modal-content {
+
+        width: 96%;
+        max-width: 500px;
+
+        margin:
+            1vh auto;
+
+        padding:
+            29px 20px
+            24px;
+
+        border-radius: 9px;
+
+    }
+
+
+    .modal-content h2 {
+
+        margin-bottom: 23px;
+
+        font-size: 25px;
+
+    }
+
+
+    .contact-form label {
+
+        font-size: 13px;
+
+    }
+
+
+    /*
+       16px evita el zoom automático
+       del formulario en iPhone.
+    */
+
+    .contact-form input,
+    .contact-form textarea {
+
+        font-size: 16px;
+
+    }
+
+
+    .contact-form textarea {
+
+        min-height: 110px;
+
+    }
+
+
+    .form-whatsapp-info {
+
+        font-size: 11px;
+
+    }
+
+}
+
+
+/* =========================================================
+   22. CELULARES MUY PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+
+    .main-header .container {
+
+        padding:
+            0 11px;
+
+    }
+
+
+    .logo img {
+
+        width: 36px;
+        height: 36px;
+
+    }
+
+
+    .logo span {
+
+        font-size: 13px;
+
+    }
+
+
+    .menu-toggle {
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+
+    .menu-toggle span {
+
+        width: 23px;
+
+    }
+
+
+    .main-nav ul {
+
+        padding:
+            4px 13px
+            14px;
+
+    }
+
+
+    .main-nav a {
+
+        padding:
+            13px 6px;
+
+        font-size: 13px;
+
+    }
+
+
+    .hero-full {
+
+        padding:
+            35px 15px
+            78px;
+
+    }
+
+
+    .overlay h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .hero-subtitle {
+
+        font-size: 13px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 13px;
+
+    }
+
+
+    .modal-content {
+
+        padding:
+            27px 16px
+            22px;
+
+    }
+
+
+    .modal-content h2 {
+
+        font-size: 23px;
+
+    }
+
+
+    .close {
+
+        top: 8px;
+        right: 8px;
+
+    }
+
+}
+
+
+/* =========================================================
+   23. HORIZONTAL EN CELULAR
+========================================================= */
+
+@media
+(max-height: 550px)
+and
+(orientation: landscape)
+and
+(max-width: 950px) {
+
+
+    .hero-full {
+
+        min-height:
+            520px;
+
+        padding:
+            35px 20px
+            75px;
+
+    }
+
+
+    .overlay h1 {
+
+        margin-bottom: 14px;
+
+        font-size: 32px;
+
+    }
+
+
+    .hero-subtitle {
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .hero-description {
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .modal {
+
+        padding:
+            8px;
+
+    }
+
+
+    .modal-content {
+
+        margin:
+            0 auto;
+
+        padding:
+            22px 28px;
+
+    }
+
+
+    .modal-content h2 {
+
+        margin-bottom: 13px;
+
+        font-size: 23px;
+
+    }
+
+
+    .contact-form input {
+
+        min-height: 37px;
+
+        margin-bottom: 9px;
+
+        padding:
+            8px 11px;
+
+    }
+
+
+    .contact-form textarea {
+
+        min-height: 65px;
+
+        margin-bottom: 9px;
+
+        padding:
+            8px 11px;
+
+    }
+
+
+    .contact-form label {
+
+        margin-bottom: 3px;
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   24. PANTALLAS GRANDES
+========================================================= */
+
+@media (min-width: 1600px) {
+
+
+    .main-header .container {
+
+        max-width: 1400px;
+
+    }
+
+
+    .logo img {
+
+        width: 50px;
+        height: 50px;
+
+    }
+
+
+    .logo span {
+
+        font-size: 18px;
+
+    }
+
+
+    .main-nav a {
+
+        font-size: 17px;
+
+    }
+
+
+    .overlay {
+
+        max-width: 720px;
+
+    }
+
+
+    .overlay h1 {
+
+        font-size: 56px;
+
+    }
+
+
+    .hero-subtitle,
+    .hero-description {
+
+        font-size: 17px;
+
+    }
+
+}
+
+
+/* =========================================================
+   25. ACCESIBILIDAD
+========================================================= */
+
+.menu-toggle:focus-visible,
+.btn-contact:focus-visible,
+.close:focus-visible,
+.main-nav a:focus-visible {
+
+    outline:
+        3px solid
+        rgba(0, 84, 154, .28);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* =========================================================
+   FIN
+   GRUPO CIC PERÚ
+========================================================= */
